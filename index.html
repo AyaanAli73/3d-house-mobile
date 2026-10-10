@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#304b40" />
+<title>Cozy Cottage — Cinematic Meadow & River</title>
+<link rel="stylesheet" href="./styles.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="viewport" aria-label="Interactive 3D cottage model"></div>
+<div class="loader" id="loader"><div class="loader-inner"><div class="spinner"></div><div>BUILDING YOUR COTTAGE</div><span style="font-weight:500;color:#89958a;font-size:10px">Preparing dense grass blades, leafy trees, sunrise sky, mountains, river and rain</span></div></div>
+<div class="topbar">
+  <div class="brand"><div class="eyebrow">Three.js · Procedural 3D</div><h1>Cozy Cottage</h1><div class="sub">A detailed cottage in rolling grassland, framed by leafy trees, crisp mountain ridges and drifting clouds. Explore reflective water, changing daylight and optional rain.</div></div>
+  <button id="menuToggle" class="menu-toggle" aria-controls="controlDrawer" aria-expanded="false" aria-label="Open scene controls">☰ Controls</button>
+  <div class="control-drawer" id="controlDrawer" aria-label="Scene controls">
+    <div class="drawer-header"><span>SCENE CONTROLS</span><button id="closeDrawer" aria-label="Close scene controls">✕</button></div>
+  <div class="actions">
+    <button id="resetBtn">Reset view</button>
+    <button id="wireBtn">Wireframe</button>
+    <label class="select-wrap" title="Change sun direction and atmosphere"><span>Time</span><select id="timeSelect" aria-label="Time of day">
+      <option value="sunrise" selected>Sunrise</option><option value="morning">Morning</option><option value="noon">Noon</option><option value="golden">Golden hour</option><option value="sunset">Sunset</option><option value="blue">Blue hour</option><option value="night">Night</option>
+    </select></label>
+    <label class="select-wrap" title="Balance visual quality and frame rate"><span>Quality</span><select id="qualitySelect" aria-label="Rendering quality"><option value="cinematic" selected>Cinematic</option><option value="balanced">Balanced</option><option value="performance">Performance</option></select></label>
+    <button id="rainBtn">Rain: off</button>
+    <button id="blurBtn">Motion blur: off</button>
+    <button id="sunBtn">Soft shadows: on</button>
+    <button id="fxBtn">Cinematic FX: on</button>
+    <label class="select-wrap" title="Choose which meshes to export"><span>Export</span><select id="exportModeSelect" aria-label="Export target"><option value="cottage" selected>Cottage</option><option value="full">Full scene</option></select></label>
+    <button class="primary" id="exportBtn">Export GLB ↗</button>
+  </div>
+    <div class="panel camera-panel"><div class="panel-label">Camera views</div><div class="views">
+      <button data-view="hero" class="active">3/4</button><button data-view="front">Front</button><button data-view="right">Right</button><button data-view="back">Back</button><button data-view="left">Left</button><button data-view="top">Top</button><button data-view="landscape">Landscape + River</button>
+    </div></div>
+  </div>
+</div>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="notice" id="notice"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
